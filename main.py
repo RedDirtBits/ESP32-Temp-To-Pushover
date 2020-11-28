@@ -18,6 +18,12 @@ NetworkConnection().wifi_disconnect()
 
 # Start a simple sleep cycle to provide time to reset or upload/update
 # code while in development
+
 # time.sleep(10)
+
+# This deepsleep is for only 10s.  The deepsleep time is in microseconds.  Therefore
+# to calculate deepsleep time, multiple the time in seconds you want to wait for the
+# next cycle by 1000.  For example, 15 minutes would be 900 seconds.  A 15 minute
+# deepsleep would be 900 x 1000 or 90000.
 
 # machine.deepsleep(10000)
