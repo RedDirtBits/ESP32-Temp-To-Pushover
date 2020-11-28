@@ -5,6 +5,12 @@ import time
 
 
 def temperature_sensor():
+    """
+     Function to read externally connected Temperature sensor
+
+    Returns:
+        tuple: Temperature in Fahrenheit and Celcius
+    """
 
     temp_sense = machine.Pin(12)
     wire = onewire.OneWire(temp_sense)

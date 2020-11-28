@@ -5,12 +5,13 @@ import env
 
 
 def push_notification(msg):
+    """
+     Function to connect to the Pushover API.
+
+     msg: (str) Message to be sent
+    """
 
     req_url = 'https://api.pushover.net/1/messages.json'
-
-    # req_data = ujson.dumps({'token': 'axjqcbzqqv84ru7nhpt1e98s1zadwu',
-    #                         'user': 'uovw1ofwqjpw51v8j8wnsrh9h4io5z',
-    #                         'message': msg})
 
     req_data = ujson.dumps({'token': env.credentials['pushover_token'],
                             'user': env.credentials['pushover_user'],

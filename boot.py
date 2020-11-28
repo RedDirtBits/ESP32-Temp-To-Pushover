@@ -7,8 +7,11 @@ import env
 
 from machine import Pin
 
+# Turn off debugging
 esp.osdebug(None)
 
+# Set up the LED's.
+# THIS IS FOR DEV ONLY.  REMOVE WHEN FINALIZED
 led_green = Pin(4, Pin.OUT)
 led_red = Pin(14, Pin.OUT)
 
@@ -18,9 +21,17 @@ led_red.value(0)
 
 class NetworkConnection:
 
+    """
+     Class for establishing the WiFi network connection
+    """
+
     wlan = network.WLAN(network.STA_IF)
 
     def wifi_connect(self):
+        """
+         Connects to WiFi.  Will attempt three times to connect.  Uses the LEDs for visual
+         indication of network connection status.  RED when disconnected, GREEN when connected.
+        """
 
         count = 3
 
@@ -31,7 +42,6 @@ class NetworkConnection:
             led_red.value(1)
 
             self.wlan.active(True)
-            # self.wlan.connect('ArticleTwo', 'totalsunlightsilentnoise')
             self.wlan.connect(
                 env.credentials['ssid'], env.credentials['wifi_passwd'])
             time.sleep(3)
@@ -53,6 +63,9 @@ class NetworkConnection:
             print('Unable to connect to Wifi')
 
     def wifi_disconnect(self):
+        """
+         Function to disconnect from WiFi
+        """
 
         self.wlan.disconnect()
         self.wlan.active(False)
@@ -65,6 +78,12 @@ class NetworkConnection:
         return self.wlan.isconnected()
 
     def connection_status(self):
+        """
+         Function to get network connection status
+
+        Returns:
+            Bool: True for connected, False otherwise
+        """
 
         network_conn = self.wlan.isconnected()
         return network_conn
