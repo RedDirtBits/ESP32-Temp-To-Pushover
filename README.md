@@ -12,4 +12,4 @@ Methods are also being explored to minimize current consumption to experiment wi
 
 I hope, to someday, look back on this little project and its associated code and laugh at how terrible it was, but so much fun learning and experimenting. It is also my hope that if you should read this and have any suggestions that you would reach out to me and pass them along.
 
-I am _comfortable_ writing this code as opposed to when I first started studying Python and was completely _deer in the headlights_ at trying to learn without seeming like a complete bafoon. I might still be that, but I have at least learned a thing or two, but much, so much more to learn yet enjoying the journey of it all.
+I am _comfortable_ writing this code as opposed to when I first started studying Python and was completely _deer in the headlights_ at trying to learn without seeming like a complete bafoon. I might still be that, but I have at least learned a thing or two, but much, so much more to learn yet, enjoying the journey of it all.
