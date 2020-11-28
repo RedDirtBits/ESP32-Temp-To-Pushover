@@ -1,7 +1,7 @@
 import machine
 import onewire
 import ds18x20
-import time
+import utime
 
 
 def temperature_sensor():
@@ -19,7 +19,7 @@ def temperature_sensor():
     sensor_address = sensor.scan().pop()
     sensor.convert_temp()
 
-    time.sleep(1)
+    utime.sleep(1)
 
     temperature_c = sensor.read_temp(sensor_address)
     temperature_f = (temperature_c * 1.8) + 32

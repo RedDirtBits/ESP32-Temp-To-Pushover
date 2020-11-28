@@ -2,7 +2,7 @@
 
 import esp
 import network
-import time
+import utime
 import env
 
 from machine import Pin
@@ -44,7 +44,7 @@ class NetworkConnection:
             self.wlan.active(True)
             self.wlan.connect(
                 env.credentials['ssid'], env.credentials['wifi_passwd'])
-            time.sleep(3)
+            utime.sleep(3)
             count -= 1
 
         if self.wlan.isconnected():
