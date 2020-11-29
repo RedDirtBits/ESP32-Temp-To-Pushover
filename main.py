@@ -26,4 +26,5 @@ utime.sleep(10)
 # next cycle by 1000.  For example, 15 minutes would be 900 seconds.  A 15 minute
 # deepsleep would be 900 x 1000 or 90000.
 
-machine.deepsleep(3600000)
+# Deep sleep for 30s
+machine.deepsleep(30000)
